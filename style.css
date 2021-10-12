@@ -1,0 +1,76 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+body {
+  min-height: 100vh;
+  min-width: 100vw;
+}
+
+header {
+  background-color: bisque;
+  display: flex;
+  justify-content: center;
+  font-size: 1.5em;
+  text-shadow: 2px 2px rgb(202, 202, 202);
+  height: 3em;
+}
+.state {
+  position: absolute;
+  width: 20em;
+  height: 4em;
+  background: linear-gradient(to bottom right, #9bf6ff, #a0c4ff);
+  left: 50vw;
+  top: 20vh;
+  transform: translate(-50%, -50%);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.state-heading {
+  font-weight: normal;
+  width: max-content;
+}
+.state-anim {
+  animation: state-anim 200ms ease 100ms forwards;
+}
+@keyframes state-anim {
+  100% {
+    transform: translateY(-60%) translateX(-50%) scale(1.1);
+    box-shadow: 0px 5px 20px #ffc6ff;
+    text-shadow: 2px 2px rgb(202, 202, 202);
+  }
+}
+.game-box {
+  height: 20em;
+  width: 20em;
+  background: linear-gradient(to bottom right, #ffc6ff, #bdb2ff);
+  position: absolute;
+  top: 50vh;
+  left: 50vw;
+  transform: translate(-50%, -50%);
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+.won-state {
+  pointer-events: none;
+}
+.box {
+  border: 2px solid white;
+  background: transparent;
+  height: 100%;
+  width: 101%;
+  cursor: pointer;
+}
+.box-img-x,
+.box-img-o {
+  width: 6.5em;
+  height: 6.5em;
+  position: absolute;
+}
+.none {
+  display: none;
+}
